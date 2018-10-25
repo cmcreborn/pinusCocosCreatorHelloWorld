@@ -1,6 +1,8 @@
 # 目的
 建立簡單的pinus 可用連線客端sample
 
+本次範例scene名稱為test
+
 # 測試環境
 目前Pinus 可以使用跟Pomelo相同的客端連線方式
 
