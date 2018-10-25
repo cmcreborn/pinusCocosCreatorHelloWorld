@@ -26,9 +26,13 @@ node app
 
 # Client Side
 下載 CocosCreator 2.0.4
+
 下載 plugin : https://github.com/fuhongxue/CocosCreator-Pomelo-plugin
+
 複製 plugin 裡的 pomelo-creator-client.js 置入 CocosCreator 專案的 Script資料夾內
+
 於上述屬性檢查器中 導入為插件, 同時允許web 以及 允許 native
+
 連線範例：
 ```javascript
 var pinus = window.pomelo;
