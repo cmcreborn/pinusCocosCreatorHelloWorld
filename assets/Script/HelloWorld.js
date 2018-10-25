@@ -20,7 +20,7 @@ cc.Class({
 
     },
 
-    // called if button click
+    // button click for connect testing
     onButtonEvent: function () {
         console.log('onButtonEvent ...');
         var that = this;
@@ -32,11 +32,34 @@ cc.Class({
             host: host,
             port: port,
             log: true
-          }, function() {
-          pinus.request("connector.entryHandler.entry", "hello pinus", function(data) {
-            console.log(data.msg);
-            that.label.string = data.msg;
+        }, function () {
+            pinus.request("connector.entryHandler.entry", "hello pinus", function (data) {
+                console.log(data.msg);
+                that.label.string = data.msg;
+                pinus.disconnect();
             });
-          });
+        });
+    },
+
+    // button click for publish testing
+    onBtnPublish: function () {
+        console.log('onBtnPublish ...');
+        var that = this;
+        that.label.string = 'onBtnPublish ...';
+        var pinus = window.pomelo;
+        var host = "your-server-ip-or-domain";
+        var port = "3010";
+        pinus.init({
+            host: host,
+            port: port,
+            log: true
+        }, function () {
+            pinus.request("connector.entryHandler.publish", "hello pinus", function (data) {
+                console.log(data);
+                that.label.string = data.payload;
+                pinus.disconnect();
+            });
+        });
+
     },
 });
