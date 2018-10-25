@@ -36,16 +36,16 @@ node app
 連線範例：
 ```javascript
 var pinus = window.pomelo;
-            var host = "your-server-ip-or-domain";
-            var port = "3010";
-            pinus.init({
-                host: host,
-                port: port,
-                log: true
-            }, function() {
-            pinus.request("connector.entryHandler.entry", "hello pinus", function(data) {
-                console.log(data.msg);
-                that.label.string = data.msg;
-                });
-            });
+var host = "your-server-ip-or-domain";
+var port = "3010";
+pinus.init({
+    host: host,
+    port: port,
+    log: true
+}, function () {
+    pinus.request("connector.entryHandler.entry", "hello pinus", function (data) {
+        console.log(data.msg);
+        that.label.string = data.msg;
+    });
+});
 ```
